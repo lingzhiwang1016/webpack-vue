@@ -10,6 +10,13 @@ module.exports = {
         'webpack-hot-middleware/client?noInfo=true&reload=true', 
         './src/main.js'
     ],
+    resolve: {
+        // 设置别名
+        alias: {
+            '@': path.resolve('src'),
+            'vue$': 'vue/dist/vue.esm.js'
+        }
+    },
     optimization: {
         splitChunks: {
             cacheGroups: {

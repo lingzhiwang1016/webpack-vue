@@ -1,0 +1,213 @@
+/* Variable **********/
+
+/* 全局 */
+@global-bg-default: #fff;
+@global-bg-grey: #f7f8f9;
+
+@global-color-primary: #595959;
+@global-color-primary-new: #22A3FF;
+@global-color-secondary: fade(@global-color-primary, 80%);
+@global-color-success: #1890FF;
+@global-color-success-lighter: lighten(@global-color-success, 40%);
+@global-color-success-add: fade(@global-color-success, 70%);
+@global-color-warning: #F5A623;
+@global-color-warning-lighter: fade(@global-color-warning, 10%);
+@global-color-error: #FA6C72;
+@global-color-error-bg: #feeced;
+@global-color-error-status: fade(@global-color-error, 30%);
+@global-color-error-lighter: lighten(@global-color-error, 26%);
+// 状态
+@icon-color-primary: #ff6000;
+@icon-color-unchecked: #C5C5C5;
+
+// 滚动条滚动区域的颜色
+@scrollbar-thumb-color: #7D8BA9;
+
+/* 字色，字号 */
+@text-color-default: #131724;
+@text-color-light: #333;
+@text-color-grey: #999;
+@text-color-gray:  #7D8BA9;
+@text-color-highlight: #409eff;
+@text-color-white: #FFFFFF;
+@text-color-disabled: fade(@nav-color-secondary, 40);
+
+@link-color: #131724;
+@link-hover-color: #17C37B;
+
+@text-size-sm: 12px;
+@text-size-md: 14px;
+@text-size-lg: 16px;
+@text-size-xl: 18px;
+@text-size-xxl: 20px;
+@text-size-default: @text-size-sm;
+
+/* table */
+@table-head-color: #F5F6F8;
+@table-thead-color: #262626;
+@table-border-color: #e9e9e9;
+@table-row-hover-color: #F5F7FA;
+
+/* 按钮无边框 */
+@button-text-size: @text-size-default;
+
+@button-color-primary: #22A3FF;
+@button-color-secondary: fade(@button-color-primary, 50%);
+@button-color-active: #283f6f;
+@button-color-hover: fade(@button-color-active, 80%);
+@button-color-disabled: fade(#7d8ba9, 20%);
+
+// V2.10新按钮样式
+@button-color-primary-new: @global-color-primary-new;
+@button-color-active-new: #1D91E5;
+@button-color-hover-new: #4EB5FF;
+@button-color-disabled-new: #E9E9E9;
+@button-color-background-disable: #F5F5F5;
+@button-color-border-active: #C8E8FF;
+@button-text-color: @global-bg-default;
+@button-text-color-disabled: fade(@nav-color-secondary, 40%);
+@button-text-color-disabled-new: #BFBFBF;
+@button-text-color-delete: #F5222D;
+@button-border-color-delete: #F5222D;
+
+/* 按钮有边框 */
+@linear-button-text-color: @global-color-primary;
+@linear-button-color-primary: @global-bg-default;
+@linear-button-color-active: fade(@button-color-primary, 10%);
+@linear-button-color-hover: fade(@button-color-primary, 10%);
+
+@linear-button-border-color: #D9D9D9;
+@linear-button-border-color-hover: fade(@button-color-primary, 50%);
+@linear-button-border-color-active: @button-color-primary;
+
+/* 输入框 */
+@input-text-size: @text-size-sm;
+@input-color-default: @global-bg-default;
+@input-color-disabled: #F5F5F5;
+
+@input-border-color-primary: #E5E8EE;
+@input-border-color-hover:  #22A3FF;
+@input-border-color-active-new: #1D91E5;
+@input-border-color-active-shadow: #C8E8FF;
+@input-border-color-active-shadow-disable: #FDC8CB;
+@input-border-color-active: @button-color-active;
+@input-border-color-disabled: fade(@button-color-primary, 20%);
+
+@input-text-color-primary: #262626;
+@input-text-color-hover: @global-color-primary;
+@input-text-color-active: @global-color-primary;
+@input-text-color-disabled: #BFBFBF;
+@input-focus-border-color: #22A3FF;
+@input-focus-box-shadow-color: fade(#22A3FF, 50%);
+
+/* 下拉框 button-下拉按钮   icon-下拉按钮箭头图标   item-下拉框选项 */
+@select-color-default: @input-color-default;
+@select-color-disabled: @input-color-disabled;
+
+@select-border-color-primary: @input-border-color-primary;
+@select-border-color-hover: #22A3FF;
+@select-border-color-active: @input-border-color-active;
+@select-border-color-disabled: @input-border-color-disabled;
+
+@select-text-size: @text-size-sm;
+@select-text-color: #262626;
+@select-text-color-disabled: @input-text-color-disabled;
+
+@select-button-color-primary: fade(@button-color-primary, 10%);
+@select-button-color-hover: fade(@button-color-primary, 20%);
+@select-button-color-active: fade(@button-color-primary, 20%);
+
+@select-icon-size: @text-size-md;
+@select-icon-color-primary: @select-text-color;
+@select-icon-color-hover: @select-text-color;
+@select-icon-color-active: @button-color-primary;
+@select-icon-color-disabled: @select-text-color;
+
+@select-item-hover: fade(@button-color-primary, 10%);
+@select-item-active: fade(@button-color-primary, 20%);
+/* 分割线 */
+// @border-color: fade(@button-color-primary, 20%);
+@border-color: #E9E9E9;
+@border-color2: #E5E6EC;
+@arrow-color: #d6d6d6;
+
+/* 步骤条 */
+@step-color-finish: @button-color-primary;
+@step-color-unfinish: @button-color-disabled;
+
+/* 导航 */
+@nav-bg-color-primary: #001529;
+@nav-color-secondary: #3a4151;
+
+@sidebar-bg-primary: @nav-bg-color-primary;
+@sidebar-bg-secondary: #99a1a9;
+@sidebar-bg-third: #000C17;
+
+@tabbar-bg: fade(@button-color-primary, 20%);
+@tabbar-bg-hover: fade(#FFFFFF, 50%);
+@tabbar-bg-active: #DEF1FF;
+/* switch */
+@switch-border-color-active: #38cf99;
+
+/* 标题左边竖线 */
+@title-line-color: @button-color-primary;
+@statistics-number-color: #888;
+
+/* 全局状态颜色值 */
+@status-color-success: #34DB55;
+@status-color-warning: #FAAD14;
+@status-color-error: #F5222D;
+@status-color-primary: #22A3FF;
+@status-color-disabled: #BFBFBF;
+@status-color-disabled-background: #FEF4F4;
+
+/* radio */
+@radio-text-color: #262626;
+@radio-checked-color: #22A3FF;
+@radio-checked-bg-color: #FFFFFF;
+
+/* checkbox */
+@checkbox-checked-bg-color: #22A3FF;
+@checkbox-checked-border-color: #22A3FF;
+
+/* Form */
+@form-section-title: #262626;
+@form-item-content: @form-section-title;
+@form-remark-number: #999999;
+
+/* tooltip */
+@tooltip-icon-color: #d8dce5;
+
+/* message */
+@message-content-color: #262626;
+@message-success-border: #8EEBA1;
+@message-success-bg-color: #EAFBEE;
+@message-success-icon-color: #34DB55;
+
+/* textarea */
+@textarea-border-color-active-shadow: #FDC8CB;
+
+/* tabs */
+@tabs-active-bg-color: #F5F6F8;
+@tabs-line-bg-color: #E9E9E9;
+
+/* chart-tab */
+@chart-tab-active-color: #22A3FF;
+@chart-tab-active-bg-color: #22A3FF;
+
+/* table-icon */
+
+@table-icon-add-color: #22A3FF;
+@table-icon-delete-color: #FA6C72;
+
+/* date */
+@date-editor-border-active: #22A3FF;
+@date-table-selected-color: #22A3FF;
+
+/* more-button */
+@expand-button-color: #22A3FF;
+@expand-button-color-hover: #4EB5FF;
+@expand-button-color-active: #1C8AD9;
+
+/* 消息提示 */
+@info-color-warning: #F5A623;
