@@ -3,11 +3,12 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 module.exports = {
     entry: [
         'webpack-hot-middleware/client?noInfo=true&reload=true', 
-        './src/index.js'
+        './src/main.js'
     ],
     optimization: {
         splitChunks: {
@@ -34,6 +35,10 @@ module.exports = {
                 use: [
                 'file-loader'
                 ]
+            },
+            {
+                test: /\.vue$/,
+                loader: 'vue-loader'
             }
         ]
     },
@@ -42,7 +47,8 @@ module.exports = {
             title: 'production'
         }),
         new CleanWebpackPlugin(),
-        new ExtractTextPlugin("css/[name].css")
+        new ExtractTextPlugin("css/[name].css"),
+        new VueLoaderPlugin()
     ],
     output: {
         filename: '[name].bundle.js',

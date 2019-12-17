@@ -1,6 +1,4 @@
 import _ from 'lodash';
-import printMe from './print.js'
-import "./style.css"
 
 async function getComponent() {
 return import(/* webpackChunkName: "lodash" */ 'lodash').then(_ => {
