@@ -3,12 +3,12 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const WorkboxPlugin = require('workbox-webpack-plugin');
+// const WorkboxPlugin = require('workbox-webpack-plugin');
+console.log("当前环境是：", process.env.NODE_ENV);
 
 module.exports = {
     entry: {
-        index: './src/index.js',
-        hotLoad: 'webpack-hot-middleware/client?noInfo=true&reload=true'
+        index: './src/index.js'
     },
     optimization: {
         splitChunks: {

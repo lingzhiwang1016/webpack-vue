@@ -5,6 +5,9 @@ const merge = require('webpack-merge');
  const common = require('./webpack.common.js');
 
  module.exports = merge(common, {
+    entry: {
+        hotLoad: 'webpack-hot-middleware/client?noInfo=true&reload=true'
+    },
     mode: "development",
     devtool: 'inline-source-map',
     plugins: [
