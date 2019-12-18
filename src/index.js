@@ -1,24 +1,16 @@
-import _ from 'lodash';
-import printMe from './print.js'
-import "./style.css"
+import Print from './print';
+// import _ from 'lodash';
+// import './style.css';
+// import '../build/server/serverWork.js';
 
-async function getComponent() {
-return import(/* webpackChunkName: "lodash" */ 'lodash').then(_ => {
+function component() {
     var element = document.createElement('div');
 
-    element.innerHTML = _.join(['Hello', 'aaaaaaaaaaaaaa'], ' ');
+    // lodash 是由当前 script 脚本 import 导入进来的，"-",通过webpack里定义了
+    element.innerHTML = _.join(['Hello', '33333333'], ' ');
+    element.onclick = Print.bind(null, 'Hello webpack!');
 
     return element;
-
-}).catch(error => 'An error occurred while loading the component');
-var element = document.createElement('div');
-const _ = await import(/* webpackChunkName: "lodash" */ 'lodash');
-
-element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-
-return element;
 }
-    
-getComponent().then(component => {
-    document.body.appendChild(component);
-});
+
+  document.body.appendChild(component());

@@ -1,5 +1,6 @@
  
 const webpack = require('webpack');
+const path = require('path');
 const merge = require('webpack-merge');
  const common = require('./webpack.common.js');
 
@@ -11,5 +12,9 @@ const merge = require('webpack-merge');
         new webpack.optimize.OccurrenceOrderPlugin(),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoEmitOnErrorsPlugin()
-    ]
+    ],
+    output: {
+        filename: 'js/[name].[hash].js',
+        chunkFilename: 'js/[name].[hash].js'
+    }
  });
