@@ -5,7 +5,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 // const WorkboxPlugin = require('workbox-webpack-plugin');
 const ASSET_PATH = process.env.ASSET_PATH || '/';
-console.log("当前环境a是：", process.env.ASSET_PATH);
+// console.log("当前环境a是：", process.env.NODE_ENV);
 
 module.exports = {
     entry: {
