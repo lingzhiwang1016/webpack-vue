@@ -1,7 +1,7 @@
 import Vue from "vue";
 import Router from "vue-router";
 
-import Index from "@/pages/index/index";
+import Index from "@/pages/index/index.vue";
 // import NotFound from "@/pages/notfound/notfound";
 
 Vue.use(Router);
