@@ -4,7 +4,11 @@ const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require("webpack-Hot-middleware")
 
 const app = express();
-const config = require('./webpack.dev.js');
+
+const devConfig = require('../webpack.dev.js');
+const proConfig = require('../webpack.prod.js');
+const isDev = process.env.NODE_ENV !== 'production';
+const config = isDev ? devConfig:proConfig;
 const compiler = webpack(config);
 
 // Tell express to use the webpack-dev-middleware and use the webpack.config.js
