@@ -2,7 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 // const WorkboxPlugin = require('workbox-webpack-plugin');
 const ASSET_PATH = process.env.ASSET_PATH || '/';
@@ -39,6 +39,10 @@ module.exports = {
                 'file-loader'
                 ]
             },
+            // {
+            //     test: /\.html$/,
+            //     loader: 'html-loader'
+            // },
             {
                 test: /\.vue$/,
                 loader: 'vue-loader'
@@ -51,17 +55,16 @@ module.exports = {
             },
             // 它会应用到普通的 `.css` 文件
             // 以及 `.vue` 文件中的 `<style>` 块
+            // 请只在生产环境下使用 CSS 提取，这将便于你在开发环境下进行热重载
             {
                 test: /\.css$/,
-                // use: [
-                // 'vue-style-loader',
-                // 'css-loader'
-                // ]
-                use: ExtractTextPlugin.extract({
-                    fallback: "vue-style-loader",
-                    use: "css-loader"
-                })
-            }
+                use: [
+                  process.env.NODE_ENV !== 'production'
+                    ? 'vue-style-loader'
+                    : MiniCssExtractPlugin.loader,
+                  'css-loader'
+                ]
+              }
         ]
     },
     plugins: [
@@ -69,7 +72,9 @@ module.exports = {
             title: 'production'
         }),
         new CleanWebpackPlugin(),
-        new ExtractTextPlugin("css/[name].css"),
+        new MiniCssExtractPlugin({
+            filename: 'css/[name].css'
+        }),
         new VueLoaderPlugin(),
         new webpack.HashedModuleIdsPlugin(),
         // 将lodash包作为全局变量重新定义
@@ -90,7 +95,8 @@ module.exports = {
     ],
     resolve: {
         alias: {
-            '@': path.resolve('src')
+            '@': path.resolve('src'),
+            'vue$': 'vue/dist/vue.esm.js' 
         }
     },
     output: {

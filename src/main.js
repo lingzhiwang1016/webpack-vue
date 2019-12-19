@@ -376,8 +376,8 @@ new Vue({
     router,
     store,
     // mixins: [mixin],
-    template: "<App/>",
     el: "#app",
+    template: "<App/>",
     components: {
         App
     }
