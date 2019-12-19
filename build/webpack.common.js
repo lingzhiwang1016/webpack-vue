@@ -4,7 +4,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 // const WorkboxPlugin = require('workbox-webpack-plugin');
-console.log("当前环境是：", process.env.NODE_ENV);
+const ASSET_PATH = process.env.ASSET_PATH || '/';
+console.log("当前环境a是：", process.env.ASSET_PATH);
 
 module.exports = {
     entry: {
@@ -64,9 +65,13 @@ module.exports = {
         //     clientsClaim: true,
         //     skipWaiting: true
         // })
+        // 该插件帮助我们安心地使用环境变量
+        new webpack.DefinePlugin({
+            'process.env.ASSET_PATH': JSON.stringify(ASSET_PATH)
+        }),
     ],
     output: {
         path: path.resolve(__dirname, '../dist'),
-        publicPath: '/'
+        publicPath: ASSET_PATH
     }
 };
